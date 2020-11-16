@@ -1,0 +1,148 @@
+<style>
+  table {
+    width: 70%;
+    border: 3px solid black;
+    border-radius: 10px;
+  }
+
+  th {
+    background-color: #262624;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    margin: 10px;
+    color: white;
+    opacity: 1;
+
+  }
+
+  tr:nth-child(even) {
+    background-color: #F9B5C2;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #F2F2F2;
+  }
+
+  tr:nth-child(3n+0) {
+    background-color: #FA7F90;
+  }
+
+
+
+  td {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px;
+  }
+
+  tr:hover {
+    opacity: 1;
+    background-color: #E72F53;
+    color: black;
+    height: 80px;
+
+  }
+
+  td:hover {
+    background-color: blueviolet;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  div {
+    margin: 20px;
+  }
+
+  .first table {
+    width: 60%;
+  }
+
+  .first th {
+    background-color: #EAAC8B;
+    font-size: 17px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .first td:nth-child(even) {
+    background-color: #F2F2F2;
+  }
+
+  .first td:nth-child(odd) {
+    background-color: #F29F05;
+  }
+
+  .first td:nth-child(3n+0) {
+    background-color: #F20707;
+  }
+
+  .first td:hover {
+    background-color: #03738C;
+  }
+
+</style>
+<html>
+
+<body>
+  <div class="first">
+    <table align="center" cellspacing="0px">
+      <thead>
+        <tr>
+          <th>New Confirmed case</th>
+          <th>TotalConfirmed</th>
+          <th>New Deacth cases</th>
+          <th>Total Death cases</th>
+          <th>New Recovered</th>
+          <th>Total Recovered cases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{result.Global.NewConfirmed}}</td>
+          <td>{{result.Global.TotalConfirmed}}</td>
+          <td>{{result.Global.NewDeaths}}</td>
+          <td>{{result.Global.TotalDeaths}}</td>
+          <td>{{result.Global.NewRecovered}}</td>
+          <td>{{result.Global.TotalRecovered}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="second">
+    <table align="center" cellspacing="0px" border="0">
+      <thead>
+        <tr>
+          <th>SNO</th>
+          <th>COUNTRY</th>
+          <th>NewConfirmed</th>
+          <th>TotalConfirmed</th>
+          <th>NewDeaths</th>
+          <th>TotalDeaths</th>
+          <th>NewRecovered</th>
+          <th>TotalRecovered</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of result.Countries; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{x.Country}}</td>
+          <td>{{x.NewConfirmed}}</td>
+          <td>{{x.TotalConfirmed}}</td>
+          <td>{{x.NewDeaths}}</td>
+          <td>{{x.TotalDeaths}}</td>
+          <td>{{x.NewRecovered}}</td>
+          <td>{{x.TotalRecovered}}</td>
+          <td>{{x.Date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
